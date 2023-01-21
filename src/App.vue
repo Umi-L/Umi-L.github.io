@@ -80,11 +80,24 @@ window.addEventListener("load", function (event) {
 	<div class="content" id="languages">
 		<h2>Programming Languages</h2>
 		<div class="devider"></div>
+
 		<div id="language-wrapper">
 			<Language icon="fa-brands fa-golang" name="Golang"></Language>
-			<Language icon="fa-brands fa-python" name="Golang"></Language>
+			<Language icon="fa-brands fa-python" name="Python"></Language>
+			<Language icon="devicon-javascript-plain" name="Javascript"></Language>
+			<Language icon="devicon-typescript-plain" name="Typescript"></Language>
+			<Language icon="devicon-c-plain" name="C"></Language>
+			<Language icon="devicon-lua-plain" name="Lua"></Language>
+			<Language icon="devicon-java-plain" name="Java"></Language>
+			<Language icon="devicon-kotlin-plain" name="Kotlin"></Language>
+			<Language icon="devicon-csharp-plain" name="C#"></Language>
+			<Language icon="devicon-nodejs-plain" name="Node"></Language>
+			<Language icon="devicon-vuejs-plain" name="Vuejs"></Language>
+			<Language icon="devicon-rust-plain" name="Rust"></Language>
 		</div>
 	</div>
+
+	
 
 	<div id="projects">
 		<h2>Projects</h2>
@@ -170,6 +183,7 @@ body {
 	flex-direction: row;
 
 	justify-content: left;
+	
 }
 
 #projects {

@@ -19,8 +19,8 @@ export default {
         border: 1px black solid;
         border-radius: 7px;
 
-        height: 20%;
-        width: 20%;
+        height: 10%;
+        width: 10%;
 
         margin: 2%;
         padding: 1%;
@@ -32,6 +32,10 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .lang-container::hover i{
+        
     }
 
     i{
