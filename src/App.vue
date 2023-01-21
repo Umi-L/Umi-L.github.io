@@ -15,17 +15,18 @@ import Typed from "./typed/typed.js"
 let svgItems = ["./src/assets/terminal.svg", "./src/assets/controller.svg", "./src/assets/journal.svg"]
 
 window.addEventListener("load", function (event) {
+
 	let svgDiv = document.getElementById("item-svg");
 
 	let lastDrawn;
 
 	var options = {
-		strings: ["I'm a programmer.", "I'm a game developer.", "I'm a student."],
+		strings: ["a programmer.", "a game developer.", "a student."],
 		typeSpeed: 100,
 		backSpeed: 100,
 		startDelay: 4500,
 		smartBackspace: true,
-		showCursor: false,
+		showCursor: true,
 		backDelay: 700,
 		preStringTyped: (arrayPos) => {
 			svgDiv.innerHTML = ""
@@ -57,7 +58,10 @@ window.addEventListener("load", function (event) {
 	<div class="first-page">
 		<h2>Julian O'Grady</h2>
 		<div class="devider"></div>
-		<p id="typed"></p>
+
+		<div class="typed-container">
+			<p style="margin-right: 10px;">I'm</p><p id="typed"></p>
+		</div>
 	</div>
 	<div id="item-svg"></div>
 	<img id="down-arrow" src="./assets/down-arrow.svg" style="display:none;">
@@ -124,6 +128,34 @@ window.addEventListener("load", function (event) {
 </template>
 
 <style>
+@import './assets/variables.css';
+
+#typed{
+	color: var(--background-color);
+	background-color: var(--secondary-color);
+}
+
+.typed-cursor{
+	color: var(--secondary-color);
+	background-color: var(--secondary-color);
+	font-size: 1.5em;
+	align-items: center;
+	display: flex;
+
+	margin-top: 24px;
+	margin-bottom: 24px;
+
+	width: 0.7em;
+}
+
+p {
+	color: var(--primary-color);
+}
+
+h2, h3 {
+	color: var(--secondary-color);
+}
+
 .stop-scroll {
 	overflow-y: hidden;
 }
@@ -155,6 +187,8 @@ body {
 
 	overflow-x: hidden;
 	font-family: 'Roboto', sans-serif;
+
+	background-color: var(--background-color);
 }
 
 .first-page {
@@ -204,6 +238,11 @@ body {
 	margin-bottom: 100px;
 }
 
+.typed-container{
+	display: flex;
+	flex-direction: row;
+}
+
 
 .underlined {
 	border-bottom: 1px solid rgb(195, 195, 195);
@@ -240,7 +279,7 @@ body {
 
 .devider {
 	width: 10%;
-	border-bottom: 1px black solid;
+	border-bottom: 1px var(--primary-color) solid;
 }
 
 #down-arrow {
@@ -250,10 +289,19 @@ body {
 	width: 70px;
 
 	transform: translateX(-50%);
+
+	color: var(--separator-color);
+
+	filter: invert();
 }
 
 .fade-in {
 	animation: fade-in 2s ease-out forwards, bob 1s ease-in-out infinite;
+}
+
+path{
+	fill: var(--secondary-color) !important;
+	stroke: var(--secondary-color) !important;
 }
 
 

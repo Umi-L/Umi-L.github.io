@@ -27,11 +27,11 @@
     @keyframes left-pull {
         0%{
             left:0%;
-            border-right: 1px solid white;
+            border-right: 1px solid var(--background-color);
         }
 
         10%{
-            border-right: 1px solid rgb(195, 195, 195);
+            border-right: 1px solid var(--separator-color);
         }
 
         100%{
@@ -42,11 +42,11 @@
     @keyframes right-pull {
         0%{
             right: 0%;
-            border-left: 1px solid white;
+            border-left: 1px solid var(--background-color);
         }
 
         10%{
-            border-left: 1px solid rgb(195, 195, 195);
+            border-left: 1px solid var(--separator-color);
         }
 
         100%{
@@ -58,7 +58,7 @@
         left:0%;
         width:50%;
         height: 100%;
-        background-color: white;
+        background-color: var(--background-color);
         position: fixed;
         animation: left-pull 1s ease-in 2s;
         animation-fill-mode: forwards;  
@@ -67,7 +67,7 @@
         right:0%;
         width:50%;
         height: 100%;
-        background-color: white;
+        background-color: var(--background-color);
         position: fixed;
         animation: right-pull 1s ease-in 2s;
         animation-fill-mode: forwards;  

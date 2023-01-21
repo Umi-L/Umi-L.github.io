@@ -24,8 +24,9 @@
         position: absolute;
         width: 100%;
         height: 72px;
-        background-color: white;
-        border-bottom: 1px solid rgb(195, 195, 195);
+        background-color: var(--background-color);
+        opacity: 90%;
+        border-bottom: 1px solid var(--seperator-color);
 
         display:flex;
         flex-direction: row;
@@ -40,7 +41,7 @@
     }
 
     .outlined{
-        outline: 1px solid rgb(195, 195, 195);
+        outline: 1px solid var(--secondary-color);
     }
 
     @media screen and (min-width: 530px) {
@@ -73,11 +74,11 @@
 
     li a{
         text-decoration: none;
-        color: black;
+        color: var(--primary-color);
         transition: 0.1s;
     }
     a:hover{
-        color: rgb(63, 63, 63);
-        border-bottom: 2px solid black
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
     }
 </style>

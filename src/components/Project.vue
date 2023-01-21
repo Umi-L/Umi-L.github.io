@@ -32,7 +32,7 @@ export default {
 
 <style>
     .project-container{
-        border: 1px black solid;
+        border: 1px var(--primary-color) solid;
         border-radius: 7px;
 
         height: fit-content;
@@ -47,8 +47,21 @@ export default {
     }
 
     .project-container:hover{
-        transform: translate(0px, -20px);
+        transform: translate(0px, -5px);
         cursor: pointer;
+
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+    }
+
+    .project-container:hover > p{
+        color: var(--background-color);
+    }
+    .project-container:hover > h3{
+        color: var(--background-color);
+    }
+    .project-container:hover > .project-devider{
+        border-color: var(--background-color);
     }
 
     @media (orientation:portrait){
@@ -71,7 +84,7 @@ export default {
     .project-devider{
         margin-left: 5%;
         width: 20%;
-        border-bottom: 1px black solid;
+        border-bottom: 1px var(--primary-color) solid;
         height: 1px;
     }
 

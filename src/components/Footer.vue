@@ -19,7 +19,7 @@
         font-size: 1.5em;
 
         margin-top: 200px;
-        border-top: 1px solid rgb(195, 195, 195);
+        border-top: 1px solid var(--seperator-color);
         width: 100%;
         height: 72px;
 
@@ -43,11 +43,11 @@
 
     .social-buttons li a{
         text-decoration: none;
-        color: black;
+        color: var(--primary-color);
         transition: 0.1s;
     }
 
     .social-buttons li a:hover{
-        color: rgb(63, 63, 63);
+        color: var(--secondary-color);
     }
 </style>

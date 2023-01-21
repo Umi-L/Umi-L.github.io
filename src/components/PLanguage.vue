@@ -8,20 +8,20 @@ export default {
         }
     },
     methods: {
-        hoverStart(){
-            if (!this.hovering){
-                this.$refs.icon.classList.add("colored")
-            }
+        // hoverStart(){
+        //     if (!this.hovering){
+        //         this.$refs.icon.classList.add("colored")
+        //     }
 
-            this.hovering = true
-        },
-        hoverEnd(){
-            if (this.hovering){
-                this.$refs.icon.classList.remove("colored")
-            }
+        //     this.hovering = true
+        // },
+        // hoverEnd(){
+        //     if (this.hovering){
+        //         this.$refs.icon.classList.remove("colored")
+        //     }
 
-            this.hovering = false
-        }
+        //     this.hovering = false
+        // }
     },
 }
 
@@ -38,7 +38,7 @@ export default {
 <style>
     .lang-container{
 
-        border: 1px black solid;
+        border: 1px var(--primary-color) solid;
         border-radius: 7px;
 
         height: 10%;
@@ -61,18 +61,28 @@ export default {
     .icon {
         font-size:calc(30px + 3vw);
         transition-duration: 0.2s;
+
+        color: var(--primary-color);
     }
 
     .lang-container:hover > .icon{
 
         transform:scale(1.1);
+        color: var(--background-color);
+
 
     }
 
     .lang-container:hover > p{
 
         transform:scale(1.1);
+        color: var(--background-color);
 
+    }
+
+    .lang-container:hover{
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
     }
 
     p{
