@@ -65,8 +65,7 @@ window.addEventListener("load", function (event) {
 	<div class="content" id="about-me">
 		<h2>About me</h2>
 		<div class="devider"></div>
-		<p>Hello, my name is Julian or sometimes known by the allias umi. I am a software engineer & game developer and
-			am currently studying dramatic arts.</p>
+		<p>Hello, my name is Julian. I am a software engineer & game developer and am currently studying dramatic arts.</p>
 	</div>
 
 	<div class="content" id="experience">
@@ -78,12 +77,13 @@ window.addEventListener("load", function (event) {
 	</div>
 
 	<div class="content" id="languages">
-		<h2>Programming Languages</h2>
+		<h3>Programming Languages</h3>
+
 		<div class="devider"></div>
 
 		<div id="language-wrapper">
-			<Language icon="fa-brands fa-golang" name="Golang"></Language>
-			<Language icon="fa-brands fa-python" name="Python"></Language>
+			<Language icon="devicon-go-original-wordmark" name="Golang"></Language>
+			<Language icon="devicon-python-plain" name="Python"></Language>
 			<Language icon="devicon-javascript-plain" name="Javascript"></Language>
 			<Language icon="devicon-typescript-plain" name="Typescript"></Language>
 			<Language icon="devicon-c-plain" name="C"></Language>
@@ -220,6 +220,16 @@ body {
 
 .content h2 {
 	font-size: 3em;
+}
+
+.content h3 {
+	display: block;
+    font-size: 2.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 .content p {

@@ -2,13 +2,35 @@
 <script>
 export default {
     props: ['icon', 'name'],
+    data(){
+        return {
+            hovering: false
+        }
+    },
+    methods: {
+        hoverStart(){
+            if (!this.hovering){
+                this.$refs.icon.classList.add("colored")
+            }
+
+            this.hovering = true
+        },
+        hoverEnd(){
+            if (this.hovering){
+                this.$refs.icon.classList.remove("colored")
+            }
+
+            this.hovering = false
+        }
+    },
 }
+
 
 </script>
 
 <template>
-    <div class="lang-container">
-        <i :class=icon></i>
+    <div class="lang-container" :onmouseover=hoverStart :onmouseleave=hoverEnd>
+        <i :class="icon + ' icon'" ref="icon"></i>
         <p class="small-font">{{ name }}</p>
     </div>
 </template>
@@ -32,16 +54,31 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        min-width: 58px;
     }
 
-    .lang-container::hover i{
-        
+    .icon {
+        font-size:calc(30px + 3vw);
+        transition-duration: 0.2s;
     }
 
-    i{
-        font-size: 5vw;
-        
+    .lang-container:hover > .icon{
+
+        transform:scale(1.1);
+
     }
+
+    .lang-container:hover > p{
+
+        transform:scale(1.1);
+
+    }
+
+    p{
+        transition-duration: 0.3s;
+    }
+
     .small-font{
         font-size: 0.8em !important;
     }
