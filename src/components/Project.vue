@@ -19,10 +19,9 @@ export default {
 
 <template>
     <XyzTransition
-    appear-visible
-    duration="1"
     mode="in-out"
     xyz="fade down"
+    onscroll
     >
     <div class="project-container" ref="container">
         <img class="project-banner" :src="img" alt="">

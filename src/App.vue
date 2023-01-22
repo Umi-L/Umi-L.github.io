@@ -46,7 +46,31 @@ window.addEventListener("load", function (event) {
 
 	new Typed('#typed', options);
 
+	document.onscroll = () => {
+		document.querySelectorAll("*[onscroll]").forEach((element) => {
+			if (element.getBoundingClientRect().top < (window.innerHeight / 2)) {
+				element.classList.add("xyz-in");
+				element.classList.remove("xyz-out");
+			}
+			else{
+				element.classList.add("xyz-out");
+				element.classList.remove("xyz-in");
+			}
+		});
+	}
+
+	document.onscroll();
+
+
+
 });
+
+function calculateAge(birthday) { // birthday is a date
+   var ageDifMs = Date.now() - birthday;
+   var ageDate = new Date(ageDifMs); // miliseconds from epoch
+   return Math.abs(ageDate.getUTCFullYear() - 1970);
+ }
+
 </script>
 
 <template>
@@ -67,26 +91,26 @@ window.addEventListener("load", function (event) {
 	<div id="item-svg"></div>
 	<img id="down-arrow" src="./assets/down-arrow.svg" style="display:none;">
 
-	<XyzTransitionGroup class="content" id="about-me" xyz="fade left" appear-visible duration="1">
+	<XyzTransitionGroup class="content" id="about-me" xyz="fade left" duration="1" onscroll>
 		<h2 key="1">About me</h2>
 		<div class="devider" key="2"></div>
-		<p key="3">Hello, my name is Julian. I am a software engineer & game developer and am currently studying dramatic arts.</p>
+		<p key="3">Hello, my name is Julian. I am a {{ calculateAge(new Date("January 17, 2007")) }} year old software engineer & game developer and am currently studying dramatic arts.</p>
 	</XyzTransitionGroup>
 
-	<XyzTransitionGroup class="content" id="expirience" xyz="fade right" appear-visible duration="1">
+	<XyzTransitionGroup class="content" id="experience" xyz="fade right"  duration="1" onscroll>
 		<h2 key="1">Experience</h2>
 		<div class="devider" key="2"></div>
 		<p key="3">
-			I have done a lot of programming work in my own time; because of this I have become proficient in using many development environments. I have experience using Visual Studio, VSCode, Sublime Text, Neovim, Unity, Pycharm, GoLand, and Intellij Idea.
+			I have done a lot of programming work in my own time; because of this I have become proficient in using many development environments. I have experience using Visual Studio, VSCode, Sublime Text, Neovim, Pycharm, GoLand, and Intellij Idea.
 		</p>
 	</XyzTransitionGroup>
 
-	<XyzTransitionGroup class="content" id="languages" xyz="fade left" appear-visible duration="1">		
+	<XyzTransitionGroup class="content" id="languages" xyz="fade left" duration="1" onscroll>		
 		<h3 key="1">Programming Languages</h3>
 
 		<div class="devider" key="2"></div>
 
-		<XyzTransitionGroup xyz="fade up stagger" appear-visible duration="0.1" id="language-wrapper">
+		<XyzTransitionGroup key="3" xyz="fade up stagger" duration="0.1" id="language-wrapper" appear-visible >
 			<Language icon="devicon-go-original-wordmark" name="Golang" key="1"></Language>
 			<Language icon="devicon-python-plain" name="Python" key="2"></Language>
 			<Language icon="devicon-javascript-plain" name="Javascript" key="3"></Language>
@@ -96,15 +120,49 @@ window.addEventListener("load", function (event) {
 			<Language icon="devicon-java-plain" name="Java" key="7"></Language>
 			<Language icon="devicon-kotlin-plain" name="Kotlin" key="8"></Language>
 			<Language icon="devicon-csharp-plain" name="C#" key="9"></Language>
-			<Language icon="devicon-nodejs-plain" name="Node" key="10"></Language>
-			<Language icon="devicon-vuejs-plain" name="Vuejs" key="11"></Language>
 			<Language icon="devicon-rust-plain" name="Rust" key="12"></Language>
+		</XyzTransitionGroup>
+	</XyzTransitionGroup>
+
+	<XyzTransitionGroup class="content" id="frameworks" xyz="fade right" duration="1" onscroll>		
+		<h3 key="1">Frameworks</h3>
+
+		<div class="devider" key="2"></div>
+
+		<XyzTransitionGroup key="3" xyz="fade up stagger" duration="0.1" id="language-wrapper" appear-visible >
+			<Language icon="devicon-vuejs-plain" name="Vuejs" key="1"></Language>
+			<Language icon="devicon-nodejs-plain" name="Node" key="2"></Language>
+			<Language icon="devicon-ionic-original" name="Node" key="3"></Language>
+			<Language icon="devicon-unity-original" name="Unity" key="4"></Language>
+			<Language icon="devicon-socketio-original" name="Socket.io" key="5"></Language>
+			<Language icon="devicon-discordjs-plain" name="Discord.js" key="5"></Language>
+		</XyzTransitionGroup>
+	</XyzTransitionGroup>
+
+	<XyzTransitionGroup class="content" id="frameworks" xyz="fade left" duration="1" onscroll>		
+		<h3 key="1">Tools</h3>
+
+		<div class="devider" key="2"></div>
+
+		<XyzTransitionGroup key="3" xyz="fade up stagger" duration="0.1" id="language-wrapper" appear-visible >
+			<Language icon="devicon-blender-original" name="Blender" key="1"></Language>
+			<Language icon="devicon-ubuntu-plain" name="Ubuntu" key="2"></Language>
+			<Language icon="devicon-raspberrypi-line" name="Raspberry Pi" key="3"></Language>
+			<Language icon="devicon-npm-original-wordmark" name="NPM" key="4"></Language>
+			<Language icon="devicon-linux-plain" name="Linux" key="5"></Language>
+			<Language icon="devicon-inkscape-plain" name="Inkscape" key="6"></Language>
+			<Language icon="devicon-git-plain" name="Git" key="7"></Language>
+			<Language icon="devicon-github-original" name="Git" key="8"></Language>
+			<Language icon="devicon-gimp-plain" name="Gimp" key="9"></Language>
+			<Language icon="devicon-canva-original" name="Canva" key="10"></Language>
+			<Language icon="devicon-arduino-plain" name="Arduino" key="11"></Language>
+
 		</XyzTransitionGroup>
 	</XyzTransitionGroup>
 
 	
 
-	<XyzTransitionGroup id="projects" xyz="fade up" appear-visible duration="1">		
+	<XyzTransitionGroup id="projects" xyz="fade up" duration="1" onscroll>		
 		<h2 key="1">Projects</h2>
 		<div class="devider" key="2"></div>
 	</XyzTransitionGroup>
@@ -123,6 +181,10 @@ window.addEventListener("load", function (event) {
 		<Project title="Slather" img="./src/assets/slather.png"
 			href="https://github.com/Umi-L/slather-client/tree/master">A slither.io clone made to learn websocket using
 			typescript & nodejs for the backend and typescript & canvas for the frontend.</Project>
+		<Project title="Open Mario Maker" img="./src/assets/slather.png"
+			href="https://github.com/Umi-L/open-mario-maker">A mario maker recreation on desktop using ebitengine and golang.</Project>
+		<Project title="Dusk Example Project" img="./src/assets/slather.png"
+			href="https://github.com/Umi-L/dusk-example-project">A Gameboy Advance tech demo written in c with the DuSK library.</Project>
 	</div>
 
 	<Footer></Footer>
@@ -134,6 +196,9 @@ window.addEventListener("load", function (event) {
 #typed{
 	color: var(--background-color);
 	background-color: var(--secondary-color);
+
+	padding-left: 2px;
+	padding-right: 2px;
 }
 
 .typed-cursor{
@@ -229,6 +294,8 @@ body {
 	align-items: center;
 	flex-direction: column;
 }
+
+
 
 .content {
 	margin-left: auto;
