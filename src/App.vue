@@ -8,7 +8,6 @@ import Topbar from "./components/Topbar.vue"
 import Footer from "./components/Footer.vue"
 import Project from "./components/Project.vue"
 import Language from "./components/PLanguage.vue"
-import BackgroundBubbles from "./components/BackgroundBubbles.vue"
 
 
 import "./vivus.min.js";
@@ -52,8 +51,6 @@ window.addEventListener("load", function (event) {
 
 <template>
 
-	<BackgroundBubbles></BackgroundBubbles>
-
 	<Topbar></Topbar>
 
 	<CurtainAnimation></CurtainAnimation>
@@ -70,47 +67,47 @@ window.addEventListener("load", function (event) {
 	<div id="item-svg"></div>
 	<img id="down-arrow" src="./assets/down-arrow.svg" style="display:none;">
 
-	<div class="content" id="about-me">
-		<h2>About me</h2>
-		<div class="devider"></div>
-		<p>Hello, my name is Julian. I am a software engineer & game developer and am currently studying dramatic arts.</p>
-	</div>
+	<XyzTransitionGroup class="content" id="about-me" xyz="fade left" appear-visible duration="1">
+		<h2 key="1">About me</h2>
+		<div class="devider" key="2"></div>
+		<p key="3">Hello, my name is Julian. I am a software engineer & game developer and am currently studying dramatic arts.</p>
+	</XyzTransitionGroup>
 
-	<div class="content" id="experience">
-		<h2>Experience</h2>
-		<div class="devider"></div>
-		<p>
+	<XyzTransitionGroup class="content" id="expirience" xyz="fade right" appear-visible duration="1">
+		<h2 key="1">Experience</h2>
+		<div class="devider" key="2"></div>
+		<p key="3">
 			I have done a lot of programming work in my own time; because of this I have become proficient in using many development environments. I have experience using Visual Studio, VSCode, Sublime Text, Neovim, Unity, Pycharm, GoLand, and Intellij Idea.
 		</p>
-	</div>
+	</XyzTransitionGroup>
 
-	<div class="content" id="languages">
-		<h3>Programming Languages</h3>
+	<XyzTransitionGroup class="content" id="languages" xyz="fade left" appear-visible duration="1">		
+		<h3 key="1">Programming Languages</h3>
 
-		<div class="devider"></div>
+		<div class="devider" key="2"></div>
 
-		<div id="language-wrapper">
-			<Language icon="devicon-go-original-wordmark" name="Golang"></Language>
-			<Language icon="devicon-python-plain" name="Python"></Language>
-			<Language icon="devicon-javascript-plain" name="Javascript"></Language>
-			<Language icon="devicon-typescript-plain" name="Typescript"></Language>
-			<Language icon="devicon-c-plain" name="C"></Language>
-			<Language icon="devicon-lua-plain" name="Lua"></Language>
-			<Language icon="devicon-java-plain" name="Java"></Language>
-			<Language icon="devicon-kotlin-plain" name="Kotlin"></Language>
-			<Language icon="devicon-csharp-plain" name="C#"></Language>
-			<Language icon="devicon-nodejs-plain" name="Node"></Language>
-			<Language icon="devicon-vuejs-plain" name="Vuejs"></Language>
-			<Language icon="devicon-rust-plain" name="Rust"></Language>
-		</div>
-	</div>
+		<XyzTransitionGroup xyz="fade up stagger" appear-visible duration="0.1" id="language-wrapper">
+			<Language icon="devicon-go-original-wordmark" name="Golang" key="1"></Language>
+			<Language icon="devicon-python-plain" name="Python" key="2"></Language>
+			<Language icon="devicon-javascript-plain" name="Javascript" key="3"></Language>
+			<Language icon="devicon-typescript-plain" name="Typescript" key="4"></Language>
+			<Language icon="devicon-c-plain" name="C" key="5"></Language>
+			<Language icon="devicon-lua-plain" name="Lua" key="6"></Language>
+			<Language icon="devicon-java-plain" name="Java" key="7"></Language>
+			<Language icon="devicon-kotlin-plain" name="Kotlin" key="8"></Language>
+			<Language icon="devicon-csharp-plain" name="C#" key="9"></Language>
+			<Language icon="devicon-nodejs-plain" name="Node" key="10"></Language>
+			<Language icon="devicon-vuejs-plain" name="Vuejs" key="11"></Language>
+			<Language icon="devicon-rust-plain" name="Rust" key="12"></Language>
+		</XyzTransitionGroup>
+	</XyzTransitionGroup>
 
 	
 
-	<div id="projects">
-		<h2>Projects</h2>
-		<div class="devider"></div>
-	</div>
+	<XyzTransitionGroup id="projects" xyz="fade up" appear-visible duration="1">		
+		<h2 key="1">Projects</h2>
+		<div class="devider" key="2"></div>
+	</XyzTransitionGroup>
 
 	<div id="project-wrapper">
 		<Project title="Pumpkin Spice" img="./src/assets/pumpkin-spice.png"

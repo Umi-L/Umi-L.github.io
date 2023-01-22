@@ -18,6 +18,12 @@ export default {
 </script>
 
 <template>
+    <XyzTransition
+    appear-visible
+    duration="1"
+    mode="in-out"
+    xyz="fade down"
+    >
     <div class="project-container" ref="container">
         <img class="project-banner" :src="img" alt="">
 
@@ -27,6 +33,7 @@ export default {
 
         <p><slot></slot></p>
     </div>
+    </XyzTransition>
 </template>
 
 <style>
@@ -94,5 +101,23 @@ export default {
 
     .project-banner{
         width: 100%;
+    }
+
+    img{
+        filter: grayscale();
+        transition-duration: 0.5s;
+    }
+
+    .project-container:hover > img{
+        filter: none;
+    }
+
+    @keyframes fade-in-project {
+        0%{
+            opacity: 0%;
+        }
+        100%{
+            opacity: 100%;
+        }
     }
 </style>
