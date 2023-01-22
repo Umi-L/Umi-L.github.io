@@ -1,4 +1,3 @@
-<!-- BlogPost.vue -->
 <script>
 export default {
     props: ['title', 'img', 'href'],
