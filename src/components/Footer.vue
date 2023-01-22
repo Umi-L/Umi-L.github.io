@@ -19,7 +19,7 @@
         font-size: 1.5em;
 
         margin-top: 200px;
-        border-top: 1px solid var(--seperator-color);
+        border-top: 1px solid var(--separator-color);
         width: 100%;
         height: 72px;
 

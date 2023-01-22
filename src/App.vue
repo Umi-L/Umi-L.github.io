@@ -8,6 +8,8 @@ import Topbar from "./components/Topbar.vue"
 import Footer from "./components/Footer.vue"
 import Project from "./components/Project.vue"
 import Language from "./components/PLanguage.vue"
+import BackgroundBubbles from "./components/BackgroundBubbles.vue"
+
 
 import "./vivus.min.js";
 import Typed from "./typed/typed.js"
@@ -49,6 +51,8 @@ window.addEventListener("load", function (event) {
 </script>
 
 <template>
+
+	<BackgroundBubbles></BackgroundBubbles>
 
 	<Topbar></Topbar>
 

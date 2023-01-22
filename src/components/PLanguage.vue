@@ -1,6 +1,9 @@
 <!-- BlogPost.vue -->
 <script>
+
+
 export default {
+    
     props: ['icon', 'name'],
     data(){
         return {
@@ -29,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <div class="lang-container" :onmouseover=hoverStart :onmouseleave=hoverEnd>
+    <div :strength="20" class="lang-container" >
         <i :class="icon + ' icon'" ref="icon"></i>
         <p class="small-font">{{ name }}</p>
     </div>

@@ -26,7 +26,7 @@
         height: 72px;
         background-color: var(--background-color);
         opacity: 90%;
-        border-bottom: 1px solid var(--seperator-color);
+        border-bottom: 1px solid var(--separator-color);
 
         display:flex;
         flex-direction: row;

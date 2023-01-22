@@ -10,7 +10,8 @@
   "dependencies": {
     "jquery": "^3.6.0",
     "vivus": "^0.4.6",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-kinesis": "^2.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

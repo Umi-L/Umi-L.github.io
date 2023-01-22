@@ -27,7 +27,7 @@
     @keyframes left-pull {
         0%{
             left:0%;
-            border-right: 1px solid var(--background-color);
+            border-right: 1px solid var(--separator-color);
         }
 
         10%{
@@ -42,7 +42,7 @@
     @keyframes right-pull {
         0%{
             right: 0%;
-            border-left: 1px solid var(--background-color);
+            border-left: 1px solid var(--separator-color);
         }
 
         10%{
