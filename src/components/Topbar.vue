@@ -8,13 +8,22 @@
                 <li><a href="#about-me">about</a></li>
                 <li><a href="#experience">experience</a></li>
                 <li><a href="#projects">projects</a></li>
+                <!-- <li><router-link to="/resume">resume</router-link></li> -->
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-
+    export default {
+        methods: {
+            goToResume() {
+                //route to page resume
+                this.$router.push('/resume')
+                console.log("resume")
+            }
+        }
+    }
 </script>
 
 <style>
