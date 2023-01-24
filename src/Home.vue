@@ -13,7 +13,7 @@ import Language from "./components/PLanguage.vue"
 import "./vivus.min.js";
 import Typed from "./typed/typed.js"
 
-let svgItems = ["./src/assets/terminal.svg", "./src/assets/controller.svg", "./src/assets/journal.svg"]
+let svgItems = [assets() + "terminal.svg", assets() + "controller.svg", assets() + "journal.svg"]
 
 window.addEventListener("load", function (event) {
 
@@ -70,6 +70,13 @@ function calculateAge(birthday) { // birthday is a date
    var ageDate = new Date(ageDifMs); // miliseconds from epoch
    return Math.abs(ageDate.getUTCFullYear() - 1970);
  }
+
+function assets(){
+	if (window.location.hostname == "localhost")
+		return "./src/assets/"
+	else
+		return "/assets/"
+}
 
 </script>
 
@@ -167,22 +174,22 @@ function calculateAge(birthday) { // birthday is a date
 	</XyzTransitionGroup>
 
 	<div id="project-wrapper">
-		<Project title="Pumpkin Spice" img="./src/assets/pumpkin-spice.png"
+		<Project title="Pumpkin Spice" :img="assets() + 'pumpkin-spice.png'"
 			href="https://um1.itch.io/pumpkin-spice-post-jam">A solo rythmn game made in 3 days for the Cozy Fall Jam
 			2021 in which it placed 8th overall and 2nd for presentation.</Project>
-		<Project title="It Spreads" img="./src/assets/it-spreads.jpg" href="https://um1.itch.io/it-spreads">A solo
+		<Project title="It Spreads" :img="assets() + 'it-spreads.jpg'" href="https://um1.itch.io/it-spreads">A solo
 			puzzle game made in a week for the UW Games Institute virtual game jam where it jointly won the people's
 			choice award.</Project>
-		<Project title="Wave Reader" img="./src/assets/wave-reader.png" href="https://github.com/Umi-L/wave-reader/">An
+		<Project title="Wave Reader" :img="assets() + 'wave-reader.png'" href="https://github.com/Umi-L/wave-reader/">An
 			epub reader made using Ionic, Angularjs, EPUB.js, and the dropbox api.</Project>
-		<Project title="Hue-nx" img="./src/assets/hue-nx.jpg" href="https://github.com/Umi-L/hue-nx">A port of the
+		<Project title="Hue-nx" :img="assets() + 'hue-nx.jpg'" href="https://github.com/Umi-L/hue-nx">A port of the
 			mobile game "I Love Hue" to the nintendo switch using the love potion framework.</Project>
-		<Project title="Slather" img="./src/assets/slather.png"
+		<Project title="Slather" :img="assets() + 'slather.png'"
 			href="https://github.com/Umi-L/slather-client/tree/master">A slither.io clone made to learn websocket using
 			typescript & nodejs for the backend and typescript & canvas for the frontend.</Project>
-		<Project title="Open Mario Maker" img="./src/assets/open-mario-maker.png"
+		<Project title="Open Mario Maker" :img="assets() + 'open-mario-maker.png'"
 			href="https://github.com/Umi-L/open-mario-maker">A mario maker recreation on desktop using ebitengine and golang.</Project>
-		<Project title="Dusk Example Project" img="./src/assets/dusk-example.png"
+		<Project title="Dusk Example Project" :img="assets() + 'dusk-example.png'"
 			href="https://github.com/Umi-L/dusk-example-project">A Gameboy Advance tech demo written in c with the DuSK library.</Project>
 	</div>
 
