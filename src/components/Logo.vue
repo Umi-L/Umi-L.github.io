@@ -5,11 +5,19 @@
 
 <script>
     import "../vivus.min.js";
+
+    function assets(){
+        if (window.location.hostname == "localhost")
+            return "./src/assets/"
+        else
+            return "/assets/"
+    }
+
     window.addEventListener("load", function(event) {
 
         let logo = document.getElementById("logo");
 
-        new Vivus("logo", {duration:70, file:"./src/assets/logo.svg", type:"sync"}, callback);
+        new Vivus("logo", {duration:70, file:assets() + "logo.svg", type:"sync"}, callback);
 
         function callback(){
             logo.setAttribute("class", "flyOff");
