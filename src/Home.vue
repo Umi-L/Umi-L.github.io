@@ -191,6 +191,8 @@ function assets(){
 			href="https://github.com/Umi-L/open-mario-maker">A mario maker recreation on desktop using ebitengine and golang.</Project>
 		<Project title="Dusk Example Project" :img="assets() + 'dusk-example.png'"
 			href="https://github.com/Umi-L/dusk-example-project">A Gameboy Advance tech demo written in c with the DuSK library.</Project>
+		<Project title="Sweat-er Shop" :img="assets() + 'SweaterShop.png'"
+			href="https://um1.itch.io/sweat-er-shop">A game made for the University of Waterloo Games Institute Winter 2023 game jam.</Project>
 	</div>
 
 	<Footer></Footer>
